@@ -1,0 +1,13 @@
+@import './assets/css/_style.scss';
+.ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title {
+    list-style: none;
+}
+.ant-dropdown-menu-item-group-title {
+    padding: 0 12px;
+}
+.ant-dropdown-menu-item-group-list {
+    padding-inline-start: 20px;
+}
+.ant-btn-group > .ant-btn:first-child, .ant-btn-group > span:first-child > .ant-btn {
+	margin-right: 0;
+}

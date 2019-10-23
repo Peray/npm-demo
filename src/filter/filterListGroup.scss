@@ -1,0 +1,19 @@
+
+.mostAdd::before{
+    display: inline-block;
+    margin-right: 4px;
+    color: #f5222d;
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+    content: '*';
+    font-weight: 100;
+}
+.moreThanOne{
+    :nth-last-child(2){
+        margin-right: 0;
+    }
+    :nth-last-child(1){
+        margin-right: 5px;
+    }
+}
