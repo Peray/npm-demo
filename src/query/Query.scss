@@ -1,0 +1,43 @@
+.query {
+  padding: 16px 20px 0;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  &.fold {
+    display: none;
+  }
+  .ant-row {
+    .left {
+      .ant-row {
+        & > .ant-col {
+          display: flex;
+          align-items: center;
+          padding-bottom: 16px;
+          & > span:first-child {
+            min-width: 100px;
+            padding-right: 20px;
+            text-align: right;
+          }
+          & > .ant-select {
+            width: calc(100% - 100px);
+          }
+          &.data-range > span:last-child {
+            width: 100%;
+          }
+          label.ant-checkbox-wrapper {
+            height: 32p;
+            line-height: 32px;
+            padding-left: 25px;
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      button:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}

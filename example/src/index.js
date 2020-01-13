@@ -1,44 +1,83 @@
-import React, { Component } from 'react';
-// import Filter from '../../src/index';
-import Filter from 'datatist-react';//测试包
+import React, { Component } from 'react'
+import Filter from "./components/Filter";
+import Datatist from '../../src/index';//本地文件
+// import Datatist from 'datatist-react';//测试包
+// import 'datatist-react/lib/main.min.css'
 
-const { FilterListGroup, FilterListGroupModel } = Filter;
+const { DtQuery } = Datatist;
 
-class ReactDemo extends Component {
+const table = [{
+  name: '分群名称',
+  propertyName: 'name',
+  nodeType: 'input',
+  operator: 'LIKE'
+}, {
+  name: '分群类型',
+  propertyName: 'type',
+  nodeType: 'select',
+  options: [],
+  operator: 'EQ'
+}, {
+  name: '状态',
+  propertyName: 'status',
+  nodeType: 'select',
+  options: [],
+  operator: 'EQ'
+}, {
+  name: '更新规则',
+  propertyName: 'calcRule',
+  nodeType: 'select',
+  options: [],
+  operator: 'EQ'
+}, {
+  name: '创建时间',
+  propertyName: 'createTime',
+  nodeType: 'dateRange',
+  operator: 'DATE_BETWEEN'
+}, {
+  name: '创建账号',
+  propertyName: 'user',
+  nodeType: 'select',
+  options: [],
+  operator: 'EQ',
+  disabledNode: 'userId'
+}, {
+  name: '最近计算时间',
+  propertyName: 'lastCalcTime',
+  nodeType: 'dateRange',
+  operator: 'DATE_BETWEEN'
+}, {
+  name: '仅查看我创建的',
+  propertyName: 'userId',
+  nodeType: 'checkbox',
+  operator: 'EQ',
+  disabledNode: 'user'
+}];
+
+export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: null,
-      detailClosable: false, // 过滤标签是否可以删除
-      mode: 'edit', // edit all detail,
-      isInited: true, // 是否已经初始化完成
-      level1List: [],
-      level2List: [],
-      propertyList: [],
-      ...props
-    };
+
+    }
+
+    this.queryData = this.queryData.bind(this);
   }
 
+  queryData(value) {
+    console.log(value)
+  }
   render() {
-    const { isInited, value, mode, detailClosable, level1List, level2List, propertyList } = this.state;
-    let filterListGroupModel = new FilterListGroupModel();
-    if (isInited) {
-      filterListGroupModel = FilterListGroupModel.fromJson(value, propertyList);
-      return (
-        <div>
-          <FilterListGroup
-            mode={mode}
-            detailClosable={detailClosable}
-            level1List={level1List}
-            level2List={level2List}
-            propertyList={propertyList}
-            filterListGroupModel={filterListGroupModel}
-            onChange={this.onChange}
-          />
-        </div>
-      )
+    const grid = {
+      leftCol: 24,
+      rightCol: 24,
+      childCol: 12
     }
-    return null;
+    return (
+      <div>
+        <Filter />
+        <DtQuery isFold={true} config={table} grid={grid} queryData={this.queryData} />
+      </div>
+    )
   }
 }
-export default ReactDemo;

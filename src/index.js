@@ -1,9 +1,7 @@
-import FilterListGroup from './filter/filterListGroup';
-import FilterListGroupModel from './filter/filterListGroupModel';
+import DtFilter from './filter';
+import DtQuery from './query/Query';
 
-const Filter = {
-  FilterListGroup,
-  FilterListGroupModel
-}
-
-export default Filter;
+let Datatist = {};
+Datatist.DtFilter = DtFilter;
+Datatist.DtQuery = DtQuery;
+export default Datatist;

@@ -2,7 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js'); // 引用公共的配置
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 用于将组件的css打包成单独的文件输出到`lib`目录中
- 
+
 const prodConfig = {
   mode: 'production', // 开发模式
   entry: path.join(__dirname, "../src/index.js"),
@@ -16,8 +16,13 @@ const prodConfig = {
     rules: [
       {
         test: /\.css$/,
-        loader: [MiniCssExtractPlugin.loader,'css-loader'],
+        loader: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      {
+        test: /.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
     ]
   },
   plugins: [
@@ -43,5 +48,5 @@ const prodConfig = {
     }
   },
 };
- 
+
 module.exports = merge(prodConfig, baseConfig);

@@ -1,6 +1,6 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import ReactDemo from './index' // 引入组件
+import Index from './index' // 引入组件
  
-render(<ReactDemo />, document.getElementById('root'));
+render(<Index />, document.getElementById('root'));
