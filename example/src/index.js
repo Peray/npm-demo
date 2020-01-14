@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Row, Col, Card } from 'antd';
 import moment from 'moment';
-import Datatist from 'datatist-react';// 测试包
+// import Datatist from 'datatist-react';// 测试包
 import Filter from './components/Filter';
-// import Datatist from '../../src/index';// 本地文件
-import 'datatist-react/lib/main.min.css';
+import Datatist from '../../src/index';// 本地文件
+// import 'datatist-react/lib/main.min.css';
 
 const { DtQuery, DtDatetimePicker, DtMonthPicker, DtDaterangePicker } = Datatist;
 
