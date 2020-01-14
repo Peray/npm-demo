@@ -1,0 +1,67 @@
+@import "../css/variable";
+
+.dtDatetimePicker table {
+  & > thead > tr > td {
+    font-weight: 500;
+  }
+
+  & > thead > tr > td,
+  & > tbody > tr > td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: $primary_background_color;
+    cursor: pointer;
+  }
+
+  & > tbody > tr > td {
+    &.start,
+    &.start:hover,
+    &.start.disabled,
+    &.start.disabled:hover,
+    &.end,
+    &.end:hover,
+    &.end.disabled,
+    &.end.disabled:hover {
+      color: $primary_background_color;
+      background-color: $primary_color;
+    }
+
+    &:hover {
+      background-color: $range_color;
+    }
+
+    &.start,
+    &.start:hover {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &.end,
+    &.end:hover {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &.ranged,
+    &.ranged:hover,
+    &.ranged.disabled,
+    &.ranged.disabled:hover {
+      border-radius: 0;
+      background-color: $range_color;
+    }
+
+    &.disabled,
+    &.disabled:hover {
+      color: $disabled_color;
+      background-color: $primary_background_color;
+      cursor: inherit;
+    }
+  }
+}

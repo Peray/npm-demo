@@ -1,0 +1,35 @@
+@import "../css/variable";
+
+.dc-event-datatime-months {
+  width: 252px;
+  .header {
+    padding: 8px 0;
+    & > .ant-col-8 {
+      text-align: center;
+    }
+    .current-datetime {
+      height: 32px;
+      line-height: 32px;
+    }
+  }
+  .section {
+    & > .daypad {
+      text-align: center;
+      height: 55px;
+      line-height: 55px;
+      span {
+        padding: 6px 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        &.active {
+          background: $primary_color;
+          color: $primary_background_color;
+        }
+        &.disabled {
+          color: $disabled_color;
+          cursor: inherit;
+        }
+      }
+    }
+  }
+}
